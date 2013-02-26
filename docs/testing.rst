@@ -31,6 +31,7 @@ API is behaving correctly. For the purposes of this example, we'll assume the
 resource in question looks like::
 
     from tastypie.authentication import BasicAuthentication
+    from tastypie.authorization import Authorization
     from tastypie.resources import ModelResource
     from entries.models import Entry
 
@@ -39,6 +40,7 @@ resource in question looks like::
         class Meta:
             queryset = Entry.objects.all()
             authentication = BasicAuthentication()
+            authorization = Authorization()
 
 
 An example usage might look like::
